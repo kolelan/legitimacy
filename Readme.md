@@ -112,6 +112,31 @@ git checkout commonjs-version
   }
 }
 ```
+## Структура после сборки
+```txt
+dist/
+├── legitimacy.js          # UMD формат
+├── legitimacy.es.js       # ES модуль
+├── legitimacy.js.map      # Source map
+└── assets/               # Дополнительные assets (если будут)
+```
+## Использование в других проектах
+
+В браузере:
+```html
+<script src="https://unpkg.com/legitimacy-project/dist/legitimacy.js"></script>
+<script>
+  const legitimacy = new Legitimacy('source', '2024-01-01', 123);
+</script>
+```
+В Node.js:
+```javascript
+// CommonJS
+const { Legitimacy } = require('legitimacy-project');
+
+// ES Modules
+import { Legitimacy } from 'legitimacy-project';
+```
 
 ## 📊 Покрытие тестами
 

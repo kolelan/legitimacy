@@ -3,11 +3,26 @@
   "version": "1.0.0",
   "description": "Проект для работы с данными о легитимности",
   "type": "module",
-  "main": "src/index.js",
+  "main": "dist/legitimacy.js",
+  "module": "dist/legitimacy.es.js",
+  "browser": "dist/legitimacy.umd.js",
+  "bin": {
+    "legitimacy-demo": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:cli": "node scripts/build-cli.js",
+    "preview": "vite preview",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
-    "start": "node src/index.js"
+    "clean": "rimraf dist",
+    "start": "node dist/cli.js",
+    "demo": "node dist/cli.js",
+    "full-build": "npm run build && npm run build:cli"
   },
   "jest": {
     "testEnvironment": "node",
@@ -18,15 +33,25 @@
       "src/**/*.js",
       "!src/index.js"
     ],
-    "coverageReporters": ["text", "lcov", "html"],
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
     "moduleNameMapper": {
       "^(\\.{1,2}/.*)\\.js$": "$1"
     }
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "rimraf": "^6.0.1",
+    "vite": "^7.1.4"
   },
-  "keywords": ["legitimacy", "validation", "data"],
+  "keywords": [
+    "legitimacy",
+    "validation",
+    "data"
+  ],
   "author": "Your Name",
   "license": "MIT"
 }
