@@ -1,5 +1,11 @@
 import { Legitimacy } from './models/Legitimacy.js';
 
+// Экспортируем основной класс
+export { Legitimacy };
+
+// Экспортируем по умолчанию для удобства
+export default Legitimacy;
+
 // Пример использования класса Legitimacy
 function main() {
     console.log('=== Демонстрация работы класса Legitimacy ===\n');
@@ -59,5 +65,10 @@ function main() {
     console.log('Клон равен оригиналу:', clone.toObject() === fromJSON.toObject() ? 'Да' : 'Нет');
 }
 
-// Запуск демонстрации
-main();
+// Экспортируем демо-функцию если нужно
+export { main };
+
+// Автозапуск только если это основной модуль
+if (import.meta.url === `file://${process.argv[1]}`) {
+    main();
+}
