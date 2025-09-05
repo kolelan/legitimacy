@@ -1,0 +1,10 @@
+legitimacy-project/
+├── src/
+│   ├── models/
+│   │   └── Legitimacy.js
+│   └── index.js
+├── tests/
+│   └── models/
+│       └── Legitimacy.test.js
+├── package.json
+└── jest.config.js

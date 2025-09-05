@@ -1,4 +1,4 @@
-import { Legitimacy } from './Legitimacy.js';
+import { Legitimacy } from './models/Legitimacy.js';
 
 // Пример использования класса Legitimacy
 function main() {

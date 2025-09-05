@@ -1,4 +1,4 @@
-import { Legitimacy } from './Legitimacy.js';
+import { Legitimacy } from '../../src/models/Legitimacy.js';
 
 describe('Legitimacy Class', () => {
     describe('Constructor', () => {
